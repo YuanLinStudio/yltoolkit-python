@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "yltoolkit"
+version = "0.1.0"
+description = "Development tool kit with shortcuts, convenient functions and classes for Python."
+authors = ["L Yuan <37787762+YuanLinStudio@users.noreply.github.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+python-dateutil = "^2.8.2"
+tzdata = "^2022.7"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
