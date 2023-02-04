@@ -10,7 +10,7 @@ readme = "README.md"
 python = "^3.10"
 python-dateutil = "^2.8.2"
 tzdata = "^2022.7"
-flatten-dict = "^0.4.3"
+flatten-dict = { git = "https://github.com/YuanLinStudio/flatten-dict.git", branch = "master" }
 pillow = "^9.4.0"
 
 [build-system]
