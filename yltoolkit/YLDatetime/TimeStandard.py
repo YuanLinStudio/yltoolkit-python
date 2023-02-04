@@ -17,7 +17,7 @@ if __name__ == "__main__":
 import datetime
 from zoneinfo import ZoneInfo
 
-from YLEnum import YLEnum, auto
+from yltoolkit.YLEnum import YLEnum, auto
 
 
 class TimeStandard(YLEnum):

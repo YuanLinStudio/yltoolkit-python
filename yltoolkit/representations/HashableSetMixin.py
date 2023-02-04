@@ -16,7 +16,7 @@ if __name__ == "__main__":
 from abc import ABC
 from typing import Generic, Self, TypeVar
 
-from representations import ID, HashableMixin
+from yltoolkit.representations import ID, HashableMixin
 
 H = TypeVar("H", bound=HashableMixin)
 
