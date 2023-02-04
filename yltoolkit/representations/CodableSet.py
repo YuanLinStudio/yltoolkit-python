@@ -22,9 +22,8 @@ from typing import Generic, Self, Type, TypeVar
 
 import flatten_dict
 
-from sequoia.common.logger import logger
-from yltoolkit.file_handlers import read_csv, write_csv
-from yltoolkit.helpers import only_one_passed
+from file_handlers import read_csv, write_csv
+from helpers import only_one_passed
 
 from .Codable import ID, Codable
 

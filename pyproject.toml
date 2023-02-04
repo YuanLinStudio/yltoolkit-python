@@ -7,9 +7,11 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 python-dateutil = "^2.8.2"
 tzdata = "^2022.7"
+flatten_dict = "^1.16.0"
+pillow = "^9.4.0"
 
 
 [build-system]

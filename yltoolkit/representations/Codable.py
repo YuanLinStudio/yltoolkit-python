@@ -19,10 +19,9 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from typing import TypeVar
 
-from sequoia.common.logger import logger
-from yltoolkit.YLDatetime import TimeStandard, YLDatetime
-from yltoolkit.YLDatetime.tools import format_as_excel
-from yltoolkit.YLEnum import YLEnum
+from YLDatetime import TimeStandard, YLDatetime
+from YLDatetime.tools import format_as_excel
+from YLEnum import YLEnum
 
 ID = TypeVar("ID", str, int)
 

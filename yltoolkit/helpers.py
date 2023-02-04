@@ -11,7 +11,6 @@ import hashlib
 from functools import wraps
 from typing import Callable, Collection, ParamSpec, TypeVar
 
-from sequoia.settings import TEMP_DIR
 from yltoolkit.file_handlers import ensure_directory
 
 P = ParamSpec('P')
@@ -29,17 +28,6 @@ class Singleton(type):
         if cls not in cls._instances:
             cls._instances[cls] = super().__call__(*args, **kwargs)
         return cls._instances[cls]
-
-
-def temp_directory_required(func: Callable[P, R]) -> Callable[P, R]:
-    """
-    Make sure temp directory is accessible.
-    """
-    @wraps(func)
-    def inner(*args: P.args, **kwargs: P.kwargs) -> R:
-        ensure_directory(TEMP_DIR)
-        return func(*args, **kwargs)
-    return inner
 
 
 def only_one_passed(func: Callable[P, Collection[S]]) -> Callable[P, S]:
