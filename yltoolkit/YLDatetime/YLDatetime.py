@@ -21,8 +21,8 @@ from dateutil import parser
 
 from yltoolkit.YLDatetime.TimeStandard import TimeStandard
 
-READABLE_FORMAT = "{:%Y-%m-%d %a %H:%M:%S}"
-EXCEL_FORMAT = "{:%Y-%m-%d %H:%M:%S}"
+READABLE_FORMAT = "%Y-%m-%d %a %H:%M:%S"
+EXCEL_FORMAT = "%Y-%m-%d %H:%M:%S"
 
 
 class YLDatetime(datetime.datetime):
@@ -44,12 +44,12 @@ class YLDatetime(datetime.datetime):
     def as_readable(self, standard: TimeStandard = None) -> str:
         if standard is not None:
             self = self.convert_timestandard(standard=standard)
-        return READABLE_FORMAT.format(self)
+        return self.strftime(READABLE_FORMAT)
 
     def as_excel(self, standard: TimeStandard = None) -> str:
         if standard is not None:
             self = self.convert_timestandard(standard=standard)
-        return EXCEL_FORMAT.format(self)
+        return self.strftime(EXCEL_FORMAT)
 
     def strftime(self, __format: str) -> str:
         return super().strftime(__format)
@@ -67,6 +67,10 @@ class YLDatetime(datetime.datetime):
             tzinfo=dt.tzinfo,
             fold=dt.fold,
         )
+
+    @classmethod
+    def ensure(cls, obj: str | Self) -> Self:
+        return YLDatetime.parse(obj) if not isinstance(obj, YLDatetime) else obj
 
     @classmethod
     def now(cls: type[Self], standard: TimeStandard = TimeStandard.UTC) -> Self:
