@@ -10,6 +10,8 @@ Enumeration extension.
 from enum import Enum
 from typing import Self
 
+from yltoolkit.logger import logger
+
 
 class YLEnum(Enum):
     """

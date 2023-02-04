@@ -10,8 +10,9 @@ readme = "README.md"
 python = "^3.10"
 python-dateutil = "^2.8.2"
 tzdata = "^2022.7"
-flatten-dict = { git = "https://github.com/YuanLinStudio/flatten-dict.git", branch = "master" }
 pillow = "^9.4.0"
+loguru = "^0.5.0"
+flatten-dict = { git = "https://github.com/YuanLinStudio/flatten-dict.git", branch = "master" }
 
 [build-system]
 requires = ["poetry-core"]
